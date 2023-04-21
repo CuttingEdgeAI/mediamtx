@@ -62,8 +62,8 @@ func (s *hlsSource) run(ctx context.Context, cnf *conf.PathConf, reloadConf chan
 				hstr := hex.EncodeToString(h.Sum(nil))
 				fingerprintLower := strings.ToLower(cnf.SourceFingerprint)
 
-				if hstr != fingerprintLower {
-					return fmt.Errorf("server fingerprint do not match: expected %s, got %s",
+				if !strings.Contains(fingerprintLower, hstr) {
+					return fmt.Errorf("server fingerprint not listed: checked %s, got %s",
 						fingerprintLower, hstr)
 				}
 
