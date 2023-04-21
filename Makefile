@@ -22,6 +22,7 @@ help:
 	@echo "  apidocs-lint   run api docs linters"
 	@echo "  apidocs-gen    generate api docs HTML"
 	@echo "  binaries       build binaries for all platforms"
+	@echo "  binaries-amd64 build binaries for amd64"
 	@echo "  dockerhub      build and push images to Docker Hub"
 	@echo ""
 
