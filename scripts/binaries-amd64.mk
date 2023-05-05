@@ -1,7 +1,8 @@
 define DOCKERFILE_AMD64_BINARIES
 
 FROM $(BASE_IMAGE)
-RUN apk add --no-cache zip make git tar
+RUN apk add --no-cache zip make git tar ca-certificates && \
+    update-ca-certificates
 WORKDIR /s
 COPY go.mod go.sum ./
 RUN go mod download
